@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+</head>
+
+<body>
+
+    <div style="color:black">
+        <form action="/api" method="post">
+            <h2>Fake News Detector</h2>
+            <h3>Title</h3><input id="first" placeholder="Enter Title" name="title">
+			<br><br>
+            <h3>Author</h3><input id="second" placeholder="Enter Author or Source" name="author" >
+			<br><br>
+            <h3>Text</h3><input id="third" placeholder="Enter Whole Text" name="maintext">
+            
+            <br><br>
+            <br><br><button id="sub" type="submit ">predict</button>
+            <br>
+			
+
+
+
+
+        </form>
+
+
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+ 
+        #sub {
+            width: 200px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 100px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+      
+        }
+    </style>
+</body>
+
+</html>
