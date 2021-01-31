@@ -5,7 +5,7 @@ import os
 import re
 import nltk
 from nltk.stem import WordNetLemmatizer
-from nltk.corpus import stopwords
+from nltk.txt import stopwords
 
 
 def get_all_query(title, author, text):
