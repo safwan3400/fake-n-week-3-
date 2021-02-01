@@ -23,7 +23,7 @@ def get_delay():
 	dic = {1:'Real',0:'Fake'}
 	prob = pipeline.predict_proba(query)
 	a = max(prob[0])
-	return f'<html><body><h1>{dic[pred[0]]}</h1> <h2>{(round(a,2)," % accurate that the prediction is ", dic[pred[0]])}</h2><form action="/"> <button type="submit">back </button> </form></body></html>'
+	return f'<html><body><h1>{dic[pred[0]]}</h1> <h2>{(round(a*100,2)," % accurate that the prediction is ", dic[pred[0]])}</h2><form action="/"> <button type="submit">back </button> </form></body></html>'
 
 
 if __name__ == '__main__':
