@@ -18,7 +18,8 @@ def get_delay():
 	query_title = result['title']
 	query_author = result['author']
 	query_text = result['maintext']
-	query = get_all_query(query_title, query_author, query_text)
+	query_url = result['url']
+	query = get_all_query(query_title, query_author, query_text, query_url)
 	pred = pipeline.predict(query)
 	dic = {1:'Real',0:'Fake'}
 	prob = pipeline.predict_proba(query)
