@@ -3,6 +3,11 @@ import joblib
 from feature import *
 import json
 
+import logging
+
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
+
 pipeline = joblib.load('./pipeline.sav')
 
 app = Flask(__name__)
@@ -24,8 +29,12 @@ def get_delay():
 	dic = {1:'Real',0:'Fake'}
 	prob = pipeline.predict_proba(query)
 	a = max(prob[0])
+	app.logger.addHandler(logging.StreamHandler(sys.stdout))
+	app.logger.setLevel(logging.ERROR)
 	return f'<html><body><h1>{dic[pred[0]]}</h1> <h2>{(round(a*100,2)," % accurate that the prediction is ", dic[pred[0]])}</h2><form action="/"> <button type="submit">back </button> </form></body></html>'
 
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
