@@ -3,6 +3,8 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
+nltk.download('stopwords')
+
 lemmatizer = WordNetLemmatizer()
 
 def get_all_query(title, author, text, url):
